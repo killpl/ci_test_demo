@@ -1,0 +1,22 @@
+---
+resources:
+- name: resource-tutorial
+  type: git
+  source:
+    uri: https://github.com/killpl/ci_test_demo.git
+    branch: master
+
+- name: timer
+  type: time
+  source:
+    interval: 30s
+
+jobs:
+- name: job-with-trigger
+  public: true
+  plan:
+  - get: resource-tutorial
+  - get: timer
+    trigger: true
+  - task: hello-world
+    file: resource-tutorial/jobs/git-script-inpu-cowsay.yml
