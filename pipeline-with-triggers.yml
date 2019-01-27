@@ -19,4 +19,4 @@ jobs:
   - get: timer
     trigger: true
   - task: hello-world
-    file: resource-tutorial/jobs/git-script-inpu-cowsay.yml
+    file: resource-tutorial/jobs/git-script-input-cowsay.yml
