@@ -1,2 +1,2 @@
-#!/bin/bash -ex
+#!/bin/bash
 /usr/games/fortune | /usr/games/cowsay
