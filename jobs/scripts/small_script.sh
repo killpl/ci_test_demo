@@ -1,3 +1,2 @@
 #!/bin/bash -ex
-uname -a
-fortune | cowsay
+/usr/games/fortune | /usr/games/cowsay
