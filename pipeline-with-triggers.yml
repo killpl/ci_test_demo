@@ -9,7 +9,7 @@ resources:
 - name: timer
   type: time
   source:
-    interval: 30s
+    interval: 5m
 
 jobs:
 - name: job-with-trigger
