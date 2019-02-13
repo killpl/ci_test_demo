@@ -1,0 +1,30 @@
+---
+resources:
+- name: resource-tutorial
+  type: git
+  source:
+    uri: https://github.com/killpl/ci_test_demo.git
+    branch: master
+- name: timer
+  type: time
+  source: {interval: 24000h}
+
+jobs:
+- name: manual_trigger
+  plan:
+  - put: timer
+- name: first-job
+  plan:
+  - get: resource-tutorial
+  - get: timer
+    trigger: true
+  - task: hello-world
+    file: resource-tutorial/jobs/git-script-input.yml
+- name: second-job
+  plan:
+  - get: resource-tutorial
+  - get: timer
+    trigger: true
+    passed: [ first-job ]
+  - task: hello-world
+    file: resource-tutorial/jobs/git-script-input.yml
