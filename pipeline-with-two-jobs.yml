@@ -27,4 +27,4 @@ jobs:
     trigger: true
     passed: [ first-job ]
   - task: hello-world
-    file: resource-tutorial/jobs/git-script-input.yml
+    file: resource-tutorial/jobs/git-script-input-cowsay.yml

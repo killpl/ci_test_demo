@@ -8,5 +8,9 @@ inputs:
 - name: resource-tutorial
 
 run:
-  path: resource-tutorial/jobs/scripts/small_script.sh
-
+  path: sh
+  args:
+  - -exc
+  - |
+    chmod +x resource-tutorial/jobs/scripts/small_script.sh
+    resource-tutorial/jobs/scripts/small_script.sh
